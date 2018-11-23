@@ -153,13 +153,15 @@ public class Main {
         System.out.println("\n\n Trzecia tablica");
 
         for (int a = 0; a <= 10; a++) {
-            System.out.println("");
+			for (int b = 0; b <= 8; b++) {
+				System.out.print(liczby[a][b]);
+			}
             //checksum
-            //if ((liczby[a][8] + (2 * liczby[a][7]) + (3 * liczby[a][6]) + (4 * liczby[a][5]) + (5 * liczby[a][4]) + (6 * liczby[a][3]) + (7 * liczby[a][2]) + (8 * liczby[a][1]) + (9 * liczby[a][0])) % 11 == 0) {
-                for (int b = 0; b <= 8; b++) {
-                    System.out.print(liczby[a][b]);
-                }
-            //}
+            if ((liczby[a][0] + (2 * liczby[a][1]) + (3 * liczby[a][2]) + (4 * liczby[a][3]) + (5 * liczby[a][4]) + (6 * liczby[a][5]) + (7 * liczby[a][6]) + (8 * liczby[a][7]) + (9 * liczby[a][8])) % 11 == 0) {
+				System.out.println("Konto poprawne");
+            } else {
+				System.out.println("Konto niepoprawne");
+			}
         }
     }
 
