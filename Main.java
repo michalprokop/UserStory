@@ -24,6 +24,7 @@ public class Main {
         for(int a = 0;a<=43;a++){
             System.out.println(tab[a]);
         }
+	//zgodnie z prośbą tu ci piszę wyjaśnienie działania kodu:
         // pierwsza pętla dla rzędów(zmienna b)
         // druga pętla dla kolumn(zmienna a)
         // trzecia pętla (zmienna j)wczytuje 4 pierwsze znaki 4 pierwszych rzędów:
@@ -98,7 +99,8 @@ public class Main {
         // można potem spróbować z switch case'em
         // używamy funkcji equals po zwykłe porównanie (a==b) nie działa
         // pętle ustawiłem tak żeby nie wyskakiwała poza tablice
-
+       // String s = "?";
+       // int i = 1;
         for(int a =0;a<=10;a++) {
             for(int b  = 0;b<=8;b++) {
 
@@ -144,7 +146,7 @@ public class Main {
                     liczby[a][b] = 9;
 
                 } else {
-                    liczby[a][b] = -9;
+                    liczby[a][b] =-1;
                 }
             }
         }
@@ -153,17 +155,23 @@ public class Main {
         System.out.println("\n\n Trzecia tablica");
 
         for (int a = 0; a <= 10; a++) {
-			for (int b = 0; b <= 8; b++) {
-				System.out.print(liczby[a][b]);
-			}
+
+            for (int b = 0; b <= 8; b++) {
+                if(liczby[a][b]<0){
+                    System.out.print("?");
+                    continue;
+
+                }
+                System.out.print(liczby[a][b]);
+            }
             //checksum
-            if ((liczby[a][0] + (2 * liczby[a][1]) + (3 * liczby[a][2]) + (4 * liczby[a][3]) + (5 * liczby[a][4]) + (6 * liczby[a][5]) + (7 * liczby[a][6]) + (8 * liczby[a][7]) + (9 * liczby[a][8])) % 11 == 0) {
-				System.out.println("Konto poprawne");
-            } else {
-				System.out.println("Konto niepoprawne");
-			}
+            if(liczby[a][0]<0||liczby[a][1]<0||liczby[a][2]<0||liczby[a][3]<0||liczby[a][4]<0||liczby[a][5]<0||liczby[a][6]<0||liczby[a][7]<0||liczby[a][8]<0) {
+                System.out.println(" ILL");
+            } else if ((liczby[a][8] + (2 * liczby[a][7]) + (3 * liczby[a][6]) + (4 * liczby[a][5]) + (5 * liczby[a][4]) + (6 * liczby[a][3]) + (7 * liczby[a][2]) + (8 * liczby[a][1]) + (9 * liczby[a][0])) % 11 != 0) {
+                System.out.println(" ERR");
+            } else
+                System.out.println("");
+
         }
     }
-
-
 }
